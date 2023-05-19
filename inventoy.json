@@ -1,0 +1,14 @@
+{
+    "inventory": {
+    "make": "Toyota",
+    "model": "Tacoma",
+    "year": "2000",
+    "color": "Green",
+    "milage": "167000",
+    "new": false,
+    "used": true,
+    "location": "Tacoma",
+    "cost": "2000",
+    "received": "08-10-2000"
+    }
+}

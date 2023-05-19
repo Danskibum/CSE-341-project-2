@@ -1,0 +1,186 @@
+{
+	"swagger": "2.0",
+	"info": {
+	  "title": "My API",
+	  "description": "dealerhelps API",
+	  "version": "1.0.0"
+	},
+	"host": "cse-341-spring-23-project-2.onrender.com",
+	"basePath": "/",
+	"schemes": [
+	  "https"
+	],
+	"paths": {
+	  "/inventory/": {
+		"get": {
+		  "description": "",
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [],
+		  "responses": {
+			"200": {
+			  "description": "OK"
+			}
+		  }
+		},
+		"post": {
+		  "description": "",
+		  "parameters": [
+			{
+			  "name": "body",
+			  "in": "body",
+			  "schema": {
+				"type": "object",
+				"properties": {
+					"make": {
+						"type": "string"
+					},
+					"model": {
+						"type": "string"
+					},
+					"year": {
+						"type": "string"
+					},
+					"color": {
+						"type": "string"
+					},
+					"milage": {
+						"type": "string"
+					},
+					"new": {
+						"type": "boolean"
+					},
+					"used": {
+						"type": "boolean"
+					},
+					"location": {
+						"type": "string"
+					},
+					"cost": {
+						"type": "string"
+					},
+					"received": {
+						"type": "string"
+					}
+				}
+			  }
+			}
+		  ],
+		  "responses": {
+			"201": {
+			  "description": "Created"
+			},
+			"500": {
+			  "description": "Internal Server Error"
+			}
+		  }
+		}
+	  },
+	  "/contacts/{id}": {
+		"get": {
+		  "description": "",
+		  "produces": [
+			"application/json"
+		  ],
+		  "parameters": [
+			{
+			  "name": "id",
+			  "in": "path",
+			  "required": true,
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "OK"
+			}
+		  }
+		},
+		"put": {
+		  "description": "",
+		  "parameters": [
+			{
+			  "name": "id",
+			  "in": "path",
+			  "required": true,
+			  "type": "string"
+			},
+			{
+			  "name": "body",
+			  "in": "body",
+			  "schema": {
+				"type": "object",
+				"properties": {
+					"make": {
+						"type": "string"
+					},
+					"model": {
+						"type": "string"
+					},
+					"year": {
+						"type": "string"
+					},
+					"color": {
+						"type": "string"
+					},
+					"milage": {
+						"type": "string"
+					},
+					"new": {
+						"type": "boolean"
+					},
+					"used": {
+						"type": "boolean"
+					},
+					"location": {
+						"type": "string"
+					},
+					"cost": {
+						"type": "string"
+					},
+					"received": {
+						"type": "string"
+					}
+				}
+			  }
+			}
+		  ],
+		  "responses": {
+			"204": {
+			  "description": "No Content"
+			},
+			"500": {
+			  "description": "Internal Server Error"
+			}
+		  }
+		},
+		"delete": {
+		  "description": "",
+		  "parameters": [
+			{
+			  "name": "id",
+			  "in": "path",
+			  "required": true,
+			  "type": "string"
+			}
+		  ],
+		  "responses": {
+			"204": {
+			  "description": "No Content"
+			},
+			"500": {
+			  "description": "Internal Server Error"
+			}
+		  }
+		}
+	  },
+	  "/api-docs": {
+		"get": {
+		  "description": "",
+		  "parameters": [],
+		  "responses": {}
+		}
+	  }
+	}
+}

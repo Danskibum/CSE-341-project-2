@@ -1,0 +1,12 @@
+Inventory
+    _id                         | MongoDB_ID
+    make                        | String
+    model                       | String
+    year                        | Number
+    color                       | String
+    mileage                     | Number
+    new                         | Boolean
+    used                        | Boolean
+    location                    | String
+    cost                        | Number
+    received                    | Date
