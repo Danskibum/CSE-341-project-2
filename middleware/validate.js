@@ -6,12 +6,12 @@ const saveInventory = (req, res, next) => {
     model: 'required|string',
     year: 'required|number',
     color: 'required|string',
-    milage: 'required|number',
+    mileage: 'required|number',
     new: 'boolean',
     used: 'boolean',
     location: 'required|string',
     cost: 'required|number',
-    received: 'required|date'
+    received: 'required|number'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {

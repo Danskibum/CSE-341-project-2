@@ -32,7 +32,7 @@ const createInventory = async (req, res) => {
       model: req.body.model,
       year: req.body.year,
       color: req.body.Color,
-      milage: req.body.milage,
+      mileage: req.body.milage,
       new: req.body.new,
       used: req.body.used,
       location: req.body.location,
@@ -59,7 +59,7 @@ const createInventory = async (req, res) => {
         model: req.body.model,
         year: req.body.year,
         color: req.body.Color,
-        milage: req.body.milage,
+        mileage: req.body.milage,
         new: req.body.new,
         used: req.body.used,
         location: req.body.location,
@@ -81,7 +81,7 @@ const createInventory = async (req, res) => {
   
   const deleteInventory = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
-      res.status(400).json('Must use a valid contact id to delete a contact.');
+      res.status(400).json('Must use a valid inventory id to delete a inventory.');
     }
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db('project2')
