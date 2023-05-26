@@ -3,8 +3,11 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
   const result = await mongodb.getDb().db('project2')
-  .collection('inventory').find();
-  result.toArray().then((lists) => {
+  .collection('inventory').find()
+  .toArray((err, lists) => {
+    if (err) {
+      res.status(400).json({ message: err});
+    }
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
   });
@@ -46,6 +49,9 @@ const createInventory = async (req, res) => {
   };
 
   const updateInventory = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must use a valid contact id to update a contact.');
+    }
     const userId = new ObjectId(req.params.id);
     // be aware of updateOne if you only want to update specific fields
     const inventory = {
@@ -74,9 +80,12 @@ const createInventory = async (req, res) => {
   };
   
   const deleteInventory = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must use a valid contact id to delete a contact.');
+    }
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db('project2')
-    .collection('inventory').deleteOne({ _id: userId }, true);
+    .collection('inventory').remove({ _id: userId }, true);
     console.log(response);
     if (response.deletedCount > 0) {
       res.status(204).send();

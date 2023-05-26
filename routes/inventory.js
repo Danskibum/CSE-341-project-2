@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-const contactsController = require('../controllers/lesson2');
+const inventoryController = require('../controllers/lesson2');
+const validation = require('../middleware/validate');
 
-router.get('/', contactsController.getAll);
+router.get('/', inventoryController.getAll);
 
-router.get('/:id', contactsController.getSingle);
+router.get('/:id', inventoryController.getSingle);
 
-router.post('/', contactsController.createInventory);
+router.post('/', validation.saveInventory, inventoryController.createInventory);
 
-router.put('/:id', contactsController.updateInventory);
+router.put('/:id', validation.saveInventory, inventoryController.updateInventory);
 
-router.delete('/:id', contactsController.deleteInventory);
+router.delete('/:id', inventoryController.deleteInventory);
 
 
 module.exports = router;
