@@ -17,7 +17,47 @@
 		  "produces": [
 			"application/json"
 		  ],
-		  "parameters": [],
+		  "parameters": [
+			{
+			"name": "body",
+			"in": "body",
+			"schema": {
+			  "type": "object",
+			  "properties": {
+				  "make": {
+					  "type": "string"
+				  },
+				  "model": {
+					  "type": "string"
+				  },
+				  "year": {
+					  "type": "number"
+				  },
+				  "color": {
+					  "type": "string"
+				  },
+				  "mileage": {
+					  "type": "number"
+				  },
+				  "new": {
+					  "type": "boolean"
+				  },
+				  "used": {
+					  "type": "boolean"
+				  },
+				  "location": {
+					  "type": "string"
+				  },
+				  "cost": {
+					  "type": "number"
+				  },
+				  "received": {
+					  "type": "string"
+				  }
+				}
+			}
+		}
+	],
 		  "responses": {
 			"200": {
 			  "description": "OK"
@@ -61,7 +101,7 @@
 						"type": "number"
 					},
 					"received": {
-						"type": "number"
+						"type": "string"
 					}
 				}
 			  }
@@ -140,7 +180,7 @@
 						"type": "number"
 					},
 					"received": {
-						"type": "number"
+						"type": "string"
 					}
 				}
 			  }

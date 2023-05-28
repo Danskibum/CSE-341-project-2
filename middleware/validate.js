@@ -11,7 +11,7 @@ const saveInventory = (req, res, next) => {
     used: 'boolean',
     location: 'required|string',
     cost: 'required|number',
-    received: 'required|number'
+    received: 'required|string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
