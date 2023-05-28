@@ -19,8 +19,8 @@
 		  ],
 		  "parameters": [
 			{
-			"name": "body",
-			"in": "body",
+			"name": "inventory",
+			"in": "path",
 			"schema": {
 			  "type": "object",
 			  "properties": {
@@ -68,8 +68,8 @@
 		  "description": "",
 		  "parameters": [
 			{
-			  "name": "body",
-			  "in": "body",
+			  "name": "add",
+			  "in": "path",
 			  "schema": {
 				"type": "object",
 				"properties": {
@@ -147,8 +147,8 @@
 			  "type": "string"
 			},
 			{
-			  "name": "body",
-			  "in": "body",
+			  "name": "update",
+			  "in": "path",
 			  "schema": {
 				"type": "object",
 				"properties": {
