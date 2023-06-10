@@ -20,7 +20,7 @@
 		  "parameters": [
 			{
 			"name": "body",
-			"in": "path",
+			"in": "body",
 			"schema": {
 			  "type": "object",
 			  "properties": {
@@ -69,7 +69,7 @@
 		  "parameters": [
 			{
 			  "name": "body",
-			  "in": "path",
+			  "in": "body",
 			  "schema": {
 				"type": "object",
 				"properties": {
@@ -148,7 +148,7 @@
 			},
 			{
 			  "name": "body",
-			  "in": "path",
+			  "in": "body",
 			  "schema": {
 				"type": "object",
 				"properties": {
