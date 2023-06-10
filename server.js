@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 
-const PORT = process.env.PORT || 8080;
+
 const app = express();
 const fs = require('fs').promises;
 const path = require('path');
@@ -17,7 +17,7 @@ const SCOPES = ['https://www.googleapis.com/auth/contacts.readonly'];
 // time.
 const TOKEN_PATH = path.join(process.cwd(), 'token.json');
 const CREDENTIALS_PATH = path.join(process.cwd(), 'credentials.json');
-
+const PORT = process.env.PORT || 8080;
 app
   .use(bodyParser.json())
   .use((req, res, next) => {
